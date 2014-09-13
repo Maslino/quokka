@@ -56,7 +56,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 Files on MAP_STATIC_ROOT will be served from /static/
 example: /static/favicon.ico will be served by site.com/favicon.ico
 """
-MAP_STATIC_ROOT = ('/robots.txt', '/sitemap.xml', '/favicon.ico')
+MAP_STATIC_ROOT = ('/robots.txt', '/sitemap.xml')
 
 
 """
@@ -78,7 +78,7 @@ Default configuration for FLask-Admin instance
 :name: - will be the page title
 :url: - is the ending point
 """
-ADMIN = {'name': 'Quokka admin', 'url': '/admin'}
+ADMIN = {'name': 'Curve Learning Admin', 'url': '/admin'}
 
 """
 File admin can expose folders, you just need to have them
