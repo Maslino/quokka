@@ -5,8 +5,8 @@ import json
 import logging
 import datetime
 import random
+import html2text
 from flask import url_for, current_app
-from flask.ext.mistune import markdown
 
 from quokka.core import TEXT_FORMATS
 from quokka.core.db import db
@@ -14,6 +14,7 @@ from quokka.core.fields import MultipleObjectsReturned
 from quokka.modules.accounts.models import User
 from quokka.utils.text import slugify
 from quokka.utils import get_current_user
+from quokka.utils.md_util import Markdown
 
 from .admin.utils import _l
 
@@ -243,7 +244,7 @@ class Channel(Tagged, HasCustomValue, Publishable, LongSlugged,
 
     def get_text(self):
         if self.content_format == "markdown":
-            return markdown(self.description)
+            return Markdown.convert(self.description)
         else:
             return self.description
 
@@ -570,7 +571,7 @@ class Content(HasCustomValue, Publishable, LongSlugged,
     def get_summary(self):
         if self.summary:
             return self.summary
-        return self.get_text()
+        return html2text.html2text(self.get_text())
 
     def get_text(self):
         if hasattr(self, 'body'):
@@ -581,7 +582,7 @@ class Content(HasCustomValue, Publishable, LongSlugged,
             text = self.summary
 
         if self.content_format == "markdown":
-            return markdown(text)
+            return Markdown.convert(text)
         else:
             return text
 

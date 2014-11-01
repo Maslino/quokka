@@ -24,7 +24,7 @@
     <div class="navbar">
         <div class="logo">
             <!--<a href="/"><img src="{{ Config.get('site', 'site_logo', theme_static('img/logo.png')) }}" alt="{{Config.get('site', 'site_name')}}" /></a>-->
-            <a href="/">{{ Config.get('site', 'site_name', 'Quokka site') }}</a>
+            <a href="/">{{ Config.get('site', 'site_name') }}</a>
         </div>
         <ul>
             {% block access_control %}

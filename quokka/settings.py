@@ -122,7 +122,7 @@ COLLECT_STATIC_ROOT = STATIC_ROOT
 Never change it here, use local_settings for this.
 """
 MODE = 'production'
-DEBUG = False
+DEBUG = True
 
 """
 Debug toolbar only works if installed
