@@ -114,7 +114,7 @@ FILE_ADMIN = [
 """
 This is for Flask-Collect extension
 you can install blueprints with static files and run
-python manage.py collectstatic to copy to main static folder
+python manage.py collect to copy to main static folder
 """
 COLLECT_STATIC_ROOT = STATIC_ROOT
 
