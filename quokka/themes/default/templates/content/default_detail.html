@@ -11,11 +11,13 @@
 {% block front %}
 
     {{load_page_header(content)}}
-    <div class="col-12 col-sm-12 col-lg-12">
-        <small>{{load_page_time(content)}}</small>
-    </div>
-    <div class="col-12 col-sm-12 col-lg-12">
-        {{load_share_area(content)}}
+    <div class="row">
+        <div class="col-md-6">
+            <small>{{load_page_time(content)}}</small>
+        </div>
+        <div class="col-md-6">
+            {{load_share_area(content)}}
+        </div>
     </div>
 
     <div style="margin-top:25px;" class="clearfix"></div>
